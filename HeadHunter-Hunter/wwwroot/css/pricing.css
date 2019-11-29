@@ -1,0 +1,36 @@
+ .pricing{
+    width: 100%;
+    height: 200px;
+    overflow-y: scroll;
+    overflow-x:hidden;
+}
+
+.pricing p{
+	padding: 0;
+}
+
+.pricing .header{
+	width: 100%; 
+	height: 30px; 
+	margin-bottom: 10px;
+	background-color: lightblue;
+	text-align: center;
+}
+
+.header p{
+	vertical-align: center;
+}
+
+.pricing form{
+	overflow: none;
+}
+
+.priceTotal{
+	text-align: right;
+}
+
+.pricing input{
+	float: right;
+	clear: both;
+	padding-bottom: 10px;
+}

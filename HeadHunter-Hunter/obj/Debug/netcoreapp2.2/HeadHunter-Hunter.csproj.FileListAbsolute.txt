@@ -30,3 +30,4 @@ C:\Users\Vincent\Documents\HeadHunter-Hunter\HeadHunter-Hunter\obj\Debug\netcore
 C:\Users\Vincent\Documents\HeadHunter-Hunter\HeadHunter-Hunter\obj\Debug\netcoreapp2.2\HeadHunter-Hunter.dll
 C:\Users\Vincent\Documents\HeadHunter-Hunter\HeadHunter-Hunter\obj\Debug\netcoreapp2.2\HeadHunter-Hunter.pdb
 C:\Users\Vincent\Documents\HeadHunter-Hunter\HeadHunter-Hunter\obj\Debug\netcoreapp2.2\HeadHunter-Hunter.csproj.CopyComplete
+C:\Users\Vincent\Documents\HeadHunter-Hunter\HeadHunter-Hunter\obj\Debug\netcoreapp2.2\Razor\Views\Pricing\Example.g.cshtml.cs
