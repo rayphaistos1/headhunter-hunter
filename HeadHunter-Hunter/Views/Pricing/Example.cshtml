@@ -1,4 +1,4 @@
-﻿@model IEnumerable<HeadHunter_Hunter.Models.PricingOption>
+﻿@model List<HeadHunter_Hunter.Models.PricingOption>
 
 @{
     ViewData["Title"] = "Example";
@@ -9,48 +9,35 @@
 <script src="https://code.jquery.com/jquery-3.4.1.min.js"
         integrity="sha256-CSXorXvZcTkaix6Yvo6HppcZGetbYMGWSFlBw8HfCJo="
         crossorigin="anonymous"></script>
-@*<p>
-        <a asp-action="Create">Create New</a>
-    </p>
-    <table class="table">
-        <thead>
-            <tr>
-                <th></th>
-            </tr>
-        </thead>
-        <tbody>
-    @foreach (var item in Model) {
-            <tr>
-                <td>
-                    @Html.ActionLink("Edit", "Edit", new { /* id=item.PrimaryKey */ }) |
-                    @Html.ActionLink("Details", "Details", new { /* id=item.PrimaryKey */ }) |
-                    @Html.ActionLink("Delete", "Delete", new { /* id=item.PrimaryKey */ })
-                </td>
-            </tr>
-    }
-        </tbody>
-    </table>*@
 
-
-<div class="pricing col-sm-5">
-    <div class="header"><p><b class="header">Price</b> <span id="priceTotal">5.00</span></p></div>
-    <form>
-        @foreach (var item in Model)
-        {
-            <p>@item.Name <input class="settingVal" value="@item.Price" type='checkbox'></p>
-        }
-    </form>
+<div class="pricing">
+    <div class="pricingHeader col-sm-12"><p><b>Price</b> $<span id="priceTotal">5.00</span></p></div>
+    <div class="pricingBody col-sm-12">
+        <form>
+            
+            @for (int i=0; i<Model.Count(); i++)
+            {
+            <div class="pricingSection custom-control custom-switch">
+                <input class="settingChk custom-control-input" value="@Model[i].Price" type='checkbox'>
+                <label class="custom-control-label" for="@("input"+i.ToString())">@Model[i].Name</label>
+                <p class="setttingVal"><i>$@Model[i].Price</i></p>
+            </div>
+            }
+        </form>
+    </div>
+    <div class="pricingFooter"></div>
 </div>
 
 <script>
     var priceTotal = 5.0;
-    var priceMin = 0.0;
-    var totalElement = document.getElementById("priceTotal");
-    var inputs = document.getElementsByClassName("settingVal");
     var priceMin = priceTotal;
+    var totalElement = document.getElementById("priceTotal");
+    var inputs = document.getElementsByClassName("settingChk");
+   // var priceMin = priceTotal;
 
     for (var i = 0; i < inputs.length; i++) {
         priceMin -= parseFloat(inputs[i].value);
+        inputs[i].id = "input" + i;
     }
 
     function updatePrice() {
