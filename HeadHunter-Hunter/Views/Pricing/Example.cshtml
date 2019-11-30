@@ -1,0 +1,57 @@
+﻿@model List<HeadHunter_Hunter.Models.PricingOption>
+
+@{
+    ViewData["Title"] = "Example";
+}
+
+<h1>Example</h1>
+<link type="text/css" rel="stylesheet" href="~/css/pricing.css"/>
+<script src="https://code.jquery.com/jquery-3.4.1.min.js"
+        integrity="sha256-CSXorXvZcTkaix6Yvo6HppcZGetbYMGWSFlBw8HfCJo="
+        crossorigin="anonymous"></script>
+
+<div class="pricing">
+    <div class="pricingHeader col-sm-12"><p><b>Price</b> $<span id="priceTotal">5.00</span></p></div>
+    <div class="pricingBody col-sm-12">
+        <form>
+            
+            @for (int i=0; i<Model.Count(); i++)
+            {
+            <div class="pricingSection custom-control custom-switch">
+                <input class="settingChk custom-control-input" value="@Model[i].Price" type='checkbox'>
+                <label class="custom-control-label" for="@("input"+i.ToString())">@Model[i].Name</label>
+                <p class="setttingVal"><i>$@Model[i].Price</i></p>
+            </div>
+            }
+        </form>
+    </div>
+    <div class="pricingFooter"></div>
+</div>
+
+<script>
+    var priceTotal = 5.0;
+    var priceMin = priceTotal;
+    var totalElement = document.getElementById("priceTotal");
+    var inputs = document.getElementsByClassName("settingChk");
+   // var priceMin = priceTotal;
+
+    for (var i = 0; i < inputs.length; i++) {
+        priceMin -= parseFloat(inputs[i].value);
+        inputs[i].id = "input" + i;
+    }
+
+    function updatePrice() {
+        priceTotal = priceMin;
+        for (var i = 0; i < inputs.length; i++) {
+            if (!inputs[i].checked) {
+                priceTotal += parseFloat(inputs[i].value);
+            }
+        }
+        totalElement.innerHTML = priceTotal;
+    }
+         $('input[type="checkbox"]').click(function(){
+                updatePrice();
+         });
+
+    updatePrice();
+</script>

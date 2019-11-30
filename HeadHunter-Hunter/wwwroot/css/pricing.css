@@ -1,0 +1,72 @@
+ 
+
+.pricingBody{
+    width: 100%;
+    height: 200px;
+    overflow-y: scroll;
+    overflow-x:hidden;
+}
+
+.pricing p{
+	padding: 0;
+}
+
+.pricing{
+    width: 300px;
+    border-radius: 5px;
+    margin: 0 auto;
+    display: block;
+    border: 2px solid lightgray;
+}
+
+.pricingSection{
+    background-color: white;
+    border-bottom: 3px solid lightgray;
+}
+
+.pricing .pricingHeader{
+	width: 100%; 
+	height: 30px;
+    border-top-left-radius: 5px;
+    border-top-right-radius: 5px;
+	margin-bottom: 0px;
+	/*background-color: lightblue;*/
+	text-align: center;
+}
+
+.pricingFooter{
+    width: 100%;
+    padding: 0px;
+    margin: 0px;
+    height: 15px;
+    border-bottom: 5px;
+   /* background-color: black;*/
+}
+
+.header p{
+	vertical-align: center;
+}
+
+.pricing form{
+	overflow: none;
+}
+
+.priceTotal{
+	text-align: right;
+}
+
+.settingVal{
+    padding: 0px;
+    margin: 0px;
+}
+
+.settingName{
+    padding: 0;
+    margin: 0;
+}
+
+.pricing input{
+	float: right;
+	clear: both;
+	padding-bottom: 10px;
+}
